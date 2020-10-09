@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        svg{background:#ddd;width:200px;height:200px;}
+    </style>
+</head>
+<body>
+    <!-- stroke-width:10 or 10px => 10 === 10px -->
+    <svg>
+        <style>
+            .rect_01{
+                fill:yellowgreen;
+                stroke:orange;
+                stroke-width:10; 
+            }
+        </style>
+        <rect class="rect_01" x="20" y="20" width="100" height="100" />
+    </svg>
+
+    <svg>
+        <style>
+            .rect_02{
+                fill:yellowgreen;
+                stroke:orangered;
+                stroke-width:10; 
+            }
+        </style>
+        <rect class="rect_02" x="20" y="20" rx="10" ry="10" width="100" height="100" />
+    </svg>
+
+    <svg>
+        <style>
+            .circle_01{
+                fill:white;
+                stroke-width:3;
+                stroke:black;
+            }
+        </style>
+        <circle class="circle_01" cx="100" cy="100" r="20" />
+    </svg>
+
+    <svg>
+        <style>
+            .ellipse_01{
+                fill:white;
+                stroke-width:3;
+                stroke:black;
+            }
+        </style>
+        <ellipse class="ellipse_01" cx="100" cy="100" rx="50" ry="25" />
+    </svg>
+</body>
+</html>

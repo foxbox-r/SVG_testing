@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        svg{width:300px;height:300px;background:#ddd;}
+        svg path{
+            stroke:red;
+            stroke-width:5;
+            fill:transparent;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>M(x y):이동</li>
+        <li>L(x y):선</li>
+        <li>H(x):수평</li>
+        <li>V(y):수직</li>
+        <li>Z:시작점 과 끝점 잇기</li>
+        <li>C(startX startY, pullX pullY,endX endY):곡선</li>
+    </ul>
+    <svg>
+        <path d="M 100 50 L 30 150 H 150 V 50 Z" />
+    </svg>
+    <svg>
+        <path d="M 0 200 C 20 200, 180 180,100 100" />
+    </svg>
+    <svg>
+        <style>
+            .path_01{
+                <!-- stroke-linecap:butt; -->
+                stroke-linecap:round;
+                <!-- stroke-linecap:square; -->
+
+                <!-- stroke-linejoin:miter; -->
+                stroke-linejoin:round;
+                <!-- stroke-linejoin:bevel; -->
+            }
+        </style>
+        <path class="path_01" d="M 20 200 L 50 50 L 100 120" />
+    </svg>
+
+    <svg>
+        <style>
+            .group_01{
+                fill:orange;
+            }
+            .group_02{
+                fill:yellowgreen;
+            }
+        </style>
+        <g class="group_01">
+            <rect x="0" y="0" width="20" height="20" />
+            <rect x="20" y="20" width="20" height="20" />
+        </g>
+        <g class="group_02">
+            <rect x="120" y="50" width="20" height="20" />
+            <rect x="60" y="120" width="20" height="20" />
+        </g>
+    </svg>
+</body>
+</html>
