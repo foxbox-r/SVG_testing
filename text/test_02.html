@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        svg{background:#ddd;width:500px;height:500px;}
+    </style>
+</head>
+<body>
+    <svg>
+        <style type="text/css">
+            .st0{fill:transparent;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+            text{
+                fill:Red;
+                font-weight:bold;
+                font-size:1.5rem;
+            }
+            tspan{
+                fill:darkgreen;
+            }
+        </style>
+        <!-- <defs> tag 는 참조를 위한 태그입니다. -->
+        <defs> 
+            <path id="text-curve" class="st0" d="M37.7,271.5c0,0,70.5-135.3,195.4-2.9s215-41.6,215-41.6"/>
+        </defs>
+        <text x="20" y="50">
+            <textPath href="#text-curve">
+                Incididunt <tspan>pariatur</tspan> consectetur esse sit proident veniam sit velit ex et quis ut adipisicing ut.
+            </textPath>
+        </text>
+    </svg>
+</body>
+</html>
