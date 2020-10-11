@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        svg{background:#ddd;width:1000px;height:1000px;}
+    </style>
+</head>
+<body>
+
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4000 4000">
+        <defs>
+            <pattern id="bg-pattern" x="0" y="0" width="0.1" height="0.1">
+                <style type="text/css">
+                    .st0{fill:#FFFFFF;stroke:#000000;stroke-width:35;stroke-miterlimit:10;}
+                    .st1{fill:none;stroke:#000000;stroke-width:20;stroke-miterlimit:10;}
+                    .st2{stroke:#000000;stroke-width:20;stroke-miterlimit:10;}
+                </style>
+                <circle class="st0" cx="297.6" cy="297.6" r="223.9"/>
+                <circle cx="333.2" cy="288.6" r="0"/>
+                <g>
+                    <circle cx="227" cy="340" r="32.5"/>
+                    <circle cx="381.7" cy="339.7" r="32.5"/>
+                </g>
+                <circle class="st1" cx="296.1" cy="302.9" r="164.1"/>
+                <ellipse class="st2" cx="144.9" cy="165.9" rx="89.1" ry="97.8"/>
+                <ellipse class="st2" cx="303.3" cy="114.1" rx="132.8" ry="121.2"/>
+                <ellipse class="st2" cx="435.7" cy="153.5" rx="98.2" ry="94.2"/>
+            </pattern>
+            <mask id="mask-glass">
+                <circle class="st2" cx="0" cy="0" r="229.9" fill="white"/>
+            </mask>
+            <style type="text/css">
+                text{
+                    font-size:1.5rem;
+                    font-weight:bold;
+                }
+            .bg-rect{
+                fill:url("#bg-pattern");
+            }
+            </style>
+            <script>
+                window.addEventListener("DOMContentLoaded",()=>{
+                    const magnifier = document.querySelector(".magnifier");
+                    const circle = document.querySelector("#mask-glass circle");
+                    console.log(magnifier,circle);
+
+                    window.addEventListener("mousemove",(e)=>{
+                        const x = e.offsetX * 4;
+                        const y = e.offsetY * 4;
+                        console.log(x,y);
+                        magnifier.style.transform = `translate(${x}px,${y}px)`;
+                        circle.style.transform = `translate(${x}px,${y}px)`;
+                    })
+                })
+            </script>
+        </defs>
+        <circle class="magnifier" class="st0" cx="0" cy="0" r="229.9"/>
+       <g mask="url(#mask-glass)">
+            <rect class="bg-rect" x="0" y="0" width="100%" height="100%"></rect>
+        </g>
+    </svg>
+</body>
+</html>

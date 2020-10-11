@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;}
+        svg{background:#ddd;}
+    </style>
+</head>
+<body>
+    <svg viewBox="0 0 500 500">
+        <defs>
+            <style>
+                text{
+                    font-size:1.5rem;
+                    font-weight:bold;
+                }
+
+                #mask-circle{
+                    fill:white;
+                    <!-- fill:black; -->
+                    <!-- fill:gray; -->
+                    <!-- fill:#ddd; -->
+                }
+            </style>
+            <mask id="mask-circle">
+                <Circle cx="90" cy="30" r="50"></Circle>
+            </mask>
+        </defs>
+        <g mask="url(#mask-circle)">
+            <text x="20" y="40">
+                <![CDATA[
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias, atque beatae eius unde autem ut hic rerum dolore molestiae voluptatem aliquam esse deserunt id praesentium ipsam, officia quos iure repellat. &#xA;&lt;
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, necessitatibus fuga deleniti exercitationem quia qui dolore magnam ex quidem fugit est vitae similique, cumque et rem! Fugit, soluta. A, recusandae! &#xA;
+                Natus, beatae vitae. Asperiores molestiae neque eveniet culpa quaerat quas quos omnis? A voluptate molestias fuga atque, eum distinctio. Asperiores aperiam repudiandae omnis quia laudantium harum accusantium fuga! Earum, laboriosam. &#xA;
+                Maiores corporis odit iusto? Ducimus veniam quod optio odio tenetur sit! Ipsa eum dolore, eos dolorum vel possimus unde, obcaecati expedita commodi fugiat nulla. Nemo similique omnis natus labore nesciunt? &#xA;
+                ]]>
+            </text>
+        </g>
+    </svg>
+</body>
+</html>
