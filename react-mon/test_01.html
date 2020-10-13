@@ -43,7 +43,24 @@
             <ellipse class="eye" cx="163.5" cy="145.92" rx="28" ry="14" fill="#fff"/>
         </mask>
         <script>
-            
+            const targetPos = {x:0,y:0};
+            const easeValue = 0.05;
+            const reactMonInfo = {x:0,y:0}
+
+            window.addEventListener("mousemove",e=>{
+                targetPos.x = e.clientX - innerWidth * 0.5;
+                targetPos.y = e.clientY - innerHeight * 0.5;
+            });
+            const reactMonElem = document.querySelector(".react-mon");
+            let dx,dy;
+            function render(){
+                dx = targetPos.x - reactMonInfo.x;
+                dy = targetPos.y - reactMonInfo.y;
+                reactMonInfo.x += dx * easeValue;
+                reactMonInfo.y += dy * easeValue;
+                reactMonElem.style.transform = `translate(${reactMonInfo.x-100}px,${reactMonInfo.y-100}px)`;
+            }
+            setInterval(render,10);
         </script>
         </defs>
         <g class="ells ells-1">
